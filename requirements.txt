@@ -1,10 +1,8 @@
-ip install -r requirements.txt
 flask
 opencv-python-headless
 ultralytics
 easyocr
 pandas
-python-dotenv
 flask-cors
 google-generativeai
 fuzzywuzzy
