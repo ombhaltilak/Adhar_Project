@@ -1,0 +1,31 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "api/app.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/process-files",
+        "dest": "api/app.py"
+      },
+      {
+        "src": "/download-results",
+        "dest": "api/app.py"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "api/app.py"
+      }
+    ],
+    "env": {
+      "GEMINI_API_KEY": "@gemini_api_key",
+      "CLASS_MODEL_PATH": "models/classification_best.pt",
+      "DETECT_MODEL_PATH": "models/detection_best.pt",
+      "NODEJS_URL": "@nodejs_url",
+      "FLASK_HOST": "0.0.0.0",
+      "FLASK_PORT": "5000"
+    }
+  }
